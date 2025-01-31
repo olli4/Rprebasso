@@ -2377,6 +2377,8 @@ subroutine minFaparCalc(fAPARtrees,nYears,minFapar,fAparFactor)
    if(nYears > lastYears .and. nYears > int((maxYears - lastYears)/2)) then
    if((nYears-maxYears+1) < 0) then
     firstYear=1
+    ! Print length of fAPARtrees, firstYear, and nYears-5
+    print *, "Length of fAPARtrees: ", size(fAPARtrees), ", firstYear: ", firstYear, ", nYears-5: ", nYears-5
     minFapar = minval(fAPARtrees(firstYear:(nYears-5)))*fAparFactor
    else
     firstYear = nYears-maxYears+1
