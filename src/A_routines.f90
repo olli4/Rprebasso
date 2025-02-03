@@ -2385,6 +2385,7 @@ subroutine minFaparCalc(fAPARtrees,nYears,minFapar,fAparFactor)
     if(firstYear==(nYears-5)) then
       minFapar = tempArray(firstYear)
     else
+      print *, "Length of fAPARtrees: ", size(fAPARtrees), ", firstYear: ", firstYear, ", nYears-5: ", nYears-5
       minFapar = minval(tempArray(firstYear:(nYears-5)))
     endif
    else
