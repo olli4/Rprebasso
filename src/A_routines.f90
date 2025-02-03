@@ -2371,7 +2371,7 @@ subroutine minFaparCalc(fAPARtrees,nYears,minFapar,fAparFactor)
    integer :: lastYears = 5 !lastYears are the number of years before the current years that should not be considered in the minimum fAPAR calculations
    integer :: maxYears =15 !maxYears are the total number of years before the current years that should be considered in the minimum fAPAR calculations
    integer :: firstYear
-   real (kind=8) :: tempArray(nYears)  ! Temporary storage for minval
+   real (kind=4) :: tempArray(nYears)  ! Temporary storage for minval
    
    if(nYears <= lastYears) minFapar = fAPARtrees(1)*fAparFactor
    if(nYears > lastYears .and. nYears <= int((maxYears - lastYears)/2)) minFapar = minval(fAPARtrees(1:(nYears-5)))*fAparFactor
@@ -2385,7 +2385,7 @@ subroutine minFaparCalc(fAPARtrees,nYears,minFapar,fAparFactor)
     minFapar = minval(tempArray(firstYear:(nYears-5)))
    else
     firstYear = nYears-maxYears+1
-    minFapar = minval(fAPARtrees(firstYear:(nYears-5)))  
+    minFapar = minval(fAPARtrees(firstYear:(nYears-5)))
    endif
    endif
      
