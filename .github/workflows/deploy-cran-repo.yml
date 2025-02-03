@@ -14,7 +14,7 @@ jobs:
   # into a CRAN-like repository hosted on GitHub pages
   deploy-cran-repo:
     #uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v2
-    uses: olli4/r-wasm-actions/.github/workflows/deploy-cran-repo.yml
+    uses: olli4/r-wasm-actions/.github/workflows/deploy-cran-repo.yml@v2
     with:
       packages: |
         ./
